@@ -1,0 +1,1 @@
+export const base_url = "https://event-scraper-backend.onrender.com"

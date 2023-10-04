@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 
 import axios from "axios";
 import { useState } from "react";
+import { base_url } from "../config";
 
 function Feedback({ loading, error, eventsLength }) {
   const [loadingEvents, setLoadingEvents] = useState(false);
@@ -12,7 +13,7 @@ function Feedback({ loading, error, eventsLength }) {
   const addEventsHandler = async () => {
     try {
       setLoadingEvents(true);
-      const response = await axios.post("/api/events");
+      const response = await axios.post(`${base_url}/api/events`);
       console.log(response);
       setLoadingEvents(false);
       window.location.reload(true);
