@@ -13,7 +13,9 @@ function Feedback({ loading, error, eventsLength }) {
   const addEventsHandler = async () => {
     try {
       setLoadingEvents(true);
-      const response = await axios.post(`${base_url}/api/events`);
+      const response = await axios.post(`${base_url}/api/events`, null, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      });
       console.log(response);
       setLoadingEvents(false);
       window.location.reload(true);

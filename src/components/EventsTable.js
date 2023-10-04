@@ -57,7 +57,9 @@ export default function EventsTable() {
 
         console.log(request);
 
-        const response = await axios(base_url + request);
+        const response = await axios.get(base_url + request, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        });
         if (mounted) {
           setEvents(response.data);
           setLoading(false);
