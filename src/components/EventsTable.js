@@ -58,7 +58,9 @@ export default function EventsTable() {
         console.log(request);
 
         const response = await axios.get(base_url + request, {
-          headers: { "Access-Control-Allow-Origin": "*" },
+          headers: {
+            "Access-Control-Allow-Origin": "https://event-scraper.netlify.app/",
+          },
         });
         if (mounted) {
           setEvents(response.data);

@@ -14,7 +14,9 @@ function Feedback({ loading, error, eventsLength }) {
     try {
       setLoadingEvents(true);
       const response = await axios.post(`${base_url}/api/events`, null, {
-        headers: { "Access-Control-Allow-Origin": "*" },
+        headers: {
+          "Access-Control-Allow-Origin": "https://event-scraper.netlify.app/",
+        },
       });
       console.log(response);
       setLoadingEvents(false);
